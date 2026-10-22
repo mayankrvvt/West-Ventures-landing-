@@ -1,0 +1,36 @@
+:root {
+  /* Palette sampled from the reference design:
+     near-black surfaces, warm cream / sand paper, one amber accent. */
+  --ink-900: #111111;
+  --ink-800: #1a1a1a;
+  --ink-700: #262626;
+  --paper-100: #f2eee4;
+  --paper-200: #e8dfd0;
+  --paper-card: #f4f0e6;
+  --brass-500: #e99f01;
+  --brass-600: #c98600;
+  --brass-100: #f6e3b4;
+  --sand-400: #bba67f; /* muted gold used for secondary italics on dark */
+  --moss-600: #7a6a4f;
+  --moss-100: #ece5d6;
+  --text-900: #1d1b17;
+  --text-600: #5d584d;
+  --text-inverse: #f2eee4;
+  --line: rgba(17, 17, 17, 0.12);
+  --line-inverse: rgba(242, 238, 228, 0.16);
+
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-body: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --container: 1120px;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+
+  --radius-sm: 0px;
+  --radius-md: 2px;
+
+  --nav-h: 84px;
+  --nav-h-scrolled: 68px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}

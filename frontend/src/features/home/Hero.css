@@ -1,0 +1,224 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink-900);
+  color: var(--text-inverse);
+  min-height: min(calc(100vh - var(--nav-h)), 860px);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(4rem, 9vw, 7rem);
+}
+
+/* Photograph is deliberately faint: it should read as atmosphere, not content */
+.hero-bg {
+  position: absolute;
+  inset: -6% 0;
+  --py: 0px;
+  transform: translate3d(0, var(--py), 0);
+  will-change: transform;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 40%;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0;
+  transform: scale(1.12);
+  animation: hero-photo-in 3s var(--ease) 0.1s forwards, hero-drift 40s ease-in-out 3s infinite alternate;
+}
+
+@keyframes hero-photo-in {
+  to {
+    opacity: 0.2;
+    transform: scale(1.04);
+  }
+}
+@keyframes hero-drift {
+  from {
+    opacity: 0.2;
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.96) 0%, rgba(17, 17, 17, 0.7) 45%, rgba(17, 17, 17, 0.4) 100%),
+    linear-gradient(180deg, rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.85));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Everything on the hero rises in with a stagger driven by --d */
+.hero-in {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-rise 1.1s var(--ease) var(--d, 0s) forwards;
+}
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-eyebrow {
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brass-500);
+  margin-bottom: 1.6rem;
+}
+
+.hero-title {
+  font-weight: 300;
+  font-size: clamp(2.5rem, 5.4vw, 4.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #f4f0e6;
+}
+
+/* Masked line reveal: each line slides up from behind its own edge */
+.hero-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.hero-line > span {
+  display: block;
+  transform: translateY(110%);
+  animation: hero-line-up 1.3s var(--ease) var(--d, 0s) forwards;
+}
+@keyframes hero-line-up {
+  to {
+    transform: none;
+  }
+}
+
+.hero-title em {
+  color: var(--brass-500);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-rule {
+  display: block;
+  width: min(380px, 70%);
+  height: 1px;
+  margin-block: 2rem 1.8rem;
+  background: linear-gradient(90deg, rgba(233, 159, 1, 0.7), rgba(233, 159, 1, 0));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: hero-rule 1.6s var(--ease) 0.9s forwards;
+}
+@keyframes hero-rule {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-lede {
+  max-width: 40ch;
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(242, 238, 228, 0.7);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.hero-note {
+  margin-top: 1.8rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: rgba(242, 238, 228, 0.32);
+}
+
+/* Scrolling strip beneath the hero */
+.ticker {
+  background: var(--paper-100);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding-block: 1.35rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 55s linear infinite;
+}
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+.ticker-group {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ticker-group li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #5a564c;
+}
+.ticker-group li::after {
+  content: "·";
+  margin-inline: 2.6rem;
+  color: var(--brass-500);
+  font-size: 1rem;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+  }
+  .hero-actions .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg img {
+    opacity: 0.2;
+    transform: none;
+    animation: none;
+  }
+  .hero-in,
+  .hero-line > span,
+  .hero-rule {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .ticker-track {
+    animation: none;
+  }
+}

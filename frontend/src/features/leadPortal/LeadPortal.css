@@ -1,0 +1,1027 @@
+/* ============================================================
+   LEAD PORTAL
+============================================================ */
+
+.lead-portal {
+  --ink: #1b1b1b;
+  --paper: #fafaf8;
+  --west: #f2a81d;
+  --west-tint: #fdf3de;
+  --gate: #1b2a4a;
+  --gate-tint: #e9ecf2;
+  --gold: #c9a227;
+  --muted: #6b6b6b;
+
+  min-height: 100vh;
+
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  line-height: 1.5;
+}
+
+.lead-portal *,
+.lead-portal *::before,
+.lead-portal *::after {
+  box-sizing: border-box;
+}
+
+.lead-portal a {
+  color: inherit;
+}
+
+.lead-wrap {
+  width: min(1120px, calc(100% - 56px));
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   HERO
+   Compact:
+   Heading
+   Subheading
+   Content
+============================================================ */
+
+.lead-hero {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--ink);
+  color: #ffffff;
+
+  padding: 72px 0 78px;
+
+  text-align: center;
+}
+
+.lead-hero::after {
+  content: "";
+
+  position: absolute;
+
+  right: -160px;
+  top: -140px;
+
+  width: 480px;
+  height: 480px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(242, 168, 29, 0.15),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.lead-hero .lead-wrap {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1000px;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   HERO HEADING
+============================================================ */
+
+.lead-eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--west);
+
+  font-size: clamp(28px, 3.2vw, 42px);
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  line-height: 1.15;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   HERO SUBHEADING
+============================================================ */
+
+.lead-hero h1 {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  font-size: clamp(25px, 2.8vw, 36px);
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+}
+
+.lead-hero h1 span {
+  color: var(--west);
+}
+
+
+/* ============================================================
+   HERO CONTENT
+============================================================ */
+
+.lead-sub {
+  max-width: 760px;
+
+  margin: 22px auto 0;
+
+  color: #bdbdb8;
+
+  font-size: clamp(16px, 1.5vw, 19px);
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+
+.lead-stats {
+  padding: 56px 0 70px;
+
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.lead-stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 40px;
+}
+
+.lead-stat {
+  margin: 0;
+
+  text-align: center;
+}
+
+.lead-stat-number {
+  color: var(--gold);
+
+  font-size: clamp(32px, 3.4vw, 46px);
+
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+.lead-stat-label {
+  margin: 14px 0 0;
+
+  color: var(--muted);
+
+  font-size: clamp(16px, 1.5vw, 20px);
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   SERVICES
+============================================================ */
+
+.lead-services {
+  padding: 95px 0;
+}
+
+.lead-services h2 {
+  max-width: 700px;
+
+  margin: 0 auto 14px;
+
+  text-align: center;
+
+  color: var(--ink);
+
+  font-size: 36px;
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.7px;
+}
+
+.lead-lede {
+  max-width: 600px;
+
+  margin: 0 auto 58px;
+
+  color: var(--muted);
+
+  font-size: 15.5px;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   PLAN GRID
+============================================================ */
+
+.lead-plan-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.lead-plan {
+  min-height: 245px;
+
+  padding: 30px 26px;
+
+  border-radius: 18px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.lead-plan:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ============================================================
+   PLAN COLORS
+============================================================ */
+
+.plan-a {
+  background: var(--west-tint);
+}
+
+.plan-b {
+  background: #e8f3fe;
+}
+
+.plan-c {
+  background: var(--gate-tint);
+}
+
+
+/* ============================================================
+   PLAN TOP
+============================================================ */
+
+.lead-plan-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+.lead-plan-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.lead-plan-tag {
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.plan-a .lead-plan-tag {
+  color: #8a5e06;
+}
+
+.plan-b .lead-plan-tag {
+  color: #1568a8;
+}
+
+.plan-c .lead-plan-tag {
+  color: var(--gate);
+}
+
+
+/* ============================================================
+   PLAN CONTENT
+============================================================ */
+
+.lead-plan h3 {
+  margin: 0 0 12px;
+
+  color: var(--ink);
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+.lead-plan p {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 14.5px;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   WHY SECTION
+============================================================ */
+
+.lead-why {
+  padding: 95px 0;
+
+  background: var(--gate);
+
+  color: #ffffff;
+}
+
+.lead-why-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+.lead-why h2 {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+}
+
+.lead-why h2 span {
+  color: var(--gold);
+}
+
+.lead-why ul {
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.lead-why li {
+  display: flex;
+
+  gap: 16px;
+
+  padding: 18px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+  color: #dadce3;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+.lead-why li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.lead-why li b {
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.lead-benefit-number {
+  min-width: 24px;
+
+  color: var(--gold);
+
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   LEAD CAPTURE
+============================================================ */
+
+.lead-capture {
+  padding: 95px 0;
+}
+
+.lead-capture-box {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 60px;
+
+  padding: 60px;
+
+  border-radius: 24px;
+
+  background: var(--ink);
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.lead-capture-box::after {
+  content: "";
+
+  position: absolute;
+
+  right: -180px;
+  bottom: -220px;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(242, 168, 29, 0.14),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   LEAD CAPTURE COPY
+============================================================ */
+
+.lead-capture-copy {
+  position: relative;
+
+  z-index: 1;
+}
+
+.lead-capture-copy h2 {
+  max-width: 480px;
+
+  margin: 0 0 14px;
+
+  color: #ffffff;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.6px;
+}
+
+.lead-capture-copy p {
+  max-width: 450px;
+
+  margin: 0;
+
+  color: #c9c9c4;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.lead-trust {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 28px;
+
+  color: #dddddd;
+
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   FORM
+============================================================ */
+
+.lead-form {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.lead-form input,
+.lead-form select {
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 0 15px;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 10px;
+
+  background: #232323;
+
+  color: #ffffff;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lead-form input::placeholder {
+  color: #8a8a8a;
+}
+
+.lead-form select {
+  cursor: pointer;
+}
+
+.lead-form input:hover,
+.lead-form select:hover {
+  border-color: #505050;
+}
+
+.lead-form input:focus,
+.lead-form select:focus {
+  border-color: var(--west);
+
+  background: #292929;
+
+  box-shadow:
+    0 0 0 3px rgba(242, 168, 29, 0.12);
+}
+
+
+/* ============================================================
+   FORM BUTTON
+============================================================ */
+
+.lead-form button {
+  min-height: 53px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 6px;
+
+  padding: 13px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: var(--west);
+
+  color: var(--ink);
+
+  font-family: inherit;
+
+  font-size: 14.5px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.lead-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  opacity: 0.92;
+}
+
+.lead-form button:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* ============================================================
+   FORM NOTE
+============================================================ */
+
+.lead-note {
+  margin-top: 2px;
+
+  color: #8a8a8a;
+
+  font-size: 11.5px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   FORM STATUS
+============================================================ */
+
+.lead-status {
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  font-size: 13.5px;
+
+  line-height: 1.5;
+}
+
+.lead-status--success {
+  border: 1px solid var(--west);
+
+  background: rgba(242, 168, 29, 0.15);
+
+  color: var(--west);
+}
+
+.lead-status--error {
+  border: 1px solid #dc7070;
+
+  background: rgba(220, 70, 70, 0.12);
+
+  color: #ffb5b5;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.lead-footer {
+  padding: 42px 0;
+
+  border-top: 1px solid #e5e2da;
+
+  background: var(--paper);
+}
+
+.lead-footer-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+.lead-footer .lead-brands {
+  font-size: 14px;
+}
+
+.lead-footer-meta {
+  color: var(--muted);
+
+  font-size: 12.5px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   MOBILE — TABLET
+============================================================ */
+
+@media (max-width: 860px) {
+  .lead-wrap {
+    width: min(100% - 40px, 1120px);
+  }
+
+  .lead-nav-inner {
+    min-height: 80px;
+  }
+
+  /* Compact hero */
+  .lead-hero {
+    padding: 62px 0 68px;
+  }
+
+  .lead-eyebrow {
+    font-size: clamp(26px, 4vw, 36px);
+  }
+
+  .lead-hero h1 {
+    font-size: clamp(23px, 3.5vw, 31px);
+  }
+
+  .lead-sub {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .lead-stats {
+    padding-bottom: 70px;
+  }
+
+  .lead-stats-grid {
+    gap: 24px;
+  }
+
+  .lead-stat-number {
+    font-size: 36px;
+  }
+
+  .lead-stat-label {
+    font-size: 15px;
+  }
+
+  .lead-services,
+  .lead-why,
+  .lead-capture {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .lead-services h2 {
+    font-size: 30px;
+  }
+
+  .lead-plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-plan {
+    min-height: auto;
+  }
+
+  .lead-why-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .lead-why h2 {
+    font-size: 30px;
+  }
+
+  .lead-capture-box {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding: 42px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE — PHONE
+============================================================ */
+
+@media (max-width: 520px) {
+  .lead-wrap {
+    width: calc(100% - 32px);
+  }
+
+  .lead-nav-inner {
+    min-height: 72px;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    gap: 12px;
+  }
+
+  .lead-brands {
+    gap: 8px;
+
+    font-size: 14px;
+  }
+
+  .lead-divider {
+    height: 18px;
+  }
+
+  .lead-nav-cta {
+    padding: 9px 12px;
+
+    font-size: 11px;
+  }
+
+
+  /* ========================================================
+     COMPACT MOBILE HERO
+  ======================================================== */
+
+  .lead-hero {
+    padding: 52px 0 58px;
+  }
+
+  .lead-stats {
+    padding-bottom: 58px;
+  }
+
+  .lead-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .lead-stat-number {
+    font-size: 32px;
+  }
+
+  .lead-eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.7px;
+  }
+
+  .lead-hero h1 {
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.4px;
+  }
+
+  .lead-sub {
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  /* ========================================================
+     SERVICES
+  ======================================================== */
+
+  .lead-services,
+  .lead-why,
+  .lead-capture {
+    padding-top: 58px;
+
+    padding-bottom: 58px;
+  }
+
+  .lead-services h2 {
+    font-size: 27px;
+  }
+
+  .lead-lede {
+    margin-bottom: 40px;
+
+    font-size: 14px;
+  }
+
+  .lead-plan {
+    padding: 25px 22px;
+  }
+
+
+  /* ========================================================
+     WHY
+  ======================================================== */
+
+  .lead-why h2 {
+    font-size: 28px;
+  }
+
+
+  /* ========================================================
+     CAPTURE
+  ======================================================== */
+
+  .lead-capture-box {
+    padding: 30px 20px;
+
+    border-radius: 18px;
+  }
+
+  .lead-capture-copy h2 {
+    font-size: 28px;
+  }
+
+  .lead-capture-copy p {
+    font-size: 14px;
+  }
+
+  .lead-form input,
+  .lead-form select {
+    min-height: 50px;
+  }
+
+  .lead-form button {
+    min-height: 52px;
+  }
+
+
+  /* ========================================================
+     FOOTER
+  ======================================================== */
+
+  .lead-footer {
+    padding: 32px 0;
+  }
+
+  .lead-footer-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .lead-footer-meta {
+    max-width: 330px;
+  }
+}

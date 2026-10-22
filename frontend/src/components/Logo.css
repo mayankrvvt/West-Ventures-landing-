@@ -1,0 +1,70 @@
+.logo {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.1rem;
+  line-height: 0.9;
+  -webkit-text-stroke: 1.3px #d79300;
+  background: linear-gradient(180deg, #f7c948 0%, #e99f01 48%, #b87400 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(120, 70, 0, 0.5));
+  transition: transform 0.6s var(--ease);
+}
+
+.logo-word {
+  margin-top: 0.15rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: #c98600;
+}
+.logo-word span {
+  color: #a56a00;
+}
+
+.logo:hover .logo-mark {
+  transform: scale(1.06);
+}
+
+.logo--lg .logo-mark {
+  font-size: 4.6rem;
+}
+.logo--lg .logo-word {
+  font-size: 1.05rem;
+  color: #f0b22d;
+}
+.logo--lg .logo-word span {
+  color: #f0b22d;
+}
+
+/* Warm halo behind the monogram (footer) */
+.logo--glow::before {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: radial-gradient(closest-side, rgba(233, 159, 1, 0.22), transparent 70%);
+  pointer-events: none;
+  animation: logo-breathe 5s ease-in-out infinite;
+}
+
+@keyframes logo-breathe {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

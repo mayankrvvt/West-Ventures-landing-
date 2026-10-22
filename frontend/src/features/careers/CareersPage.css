@@ -1,0 +1,646 @@
+/* =========================================
+   CAREERS PAGE
+========================================= */
+
+.careers-page {
+  width: 100%;
+  background: #f7f4ed;
+  color: #10142a;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.careers-hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: #10142a;
+}
+
+/* =========================================
+   HERO IMAGES
+========================================= */
+
+.careers-hero-images {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.careers-hero-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0;
+
+  transform: scale(1.04);
+
+  transition:
+    opacity 1.2s ease-in-out,
+    transform 7s ease-out;
+}
+
+.careers-hero-image.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.careers-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: rgba(8, 12, 25, 0.58);
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.careers-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  color: #ffffff;
+}
+
+.careers-hero-content h1 {
+  margin: 0 0 22px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.careers-breadcrumb {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.careers-breadcrumb-arrow {
+  font-size: 22px;
+
+  line-height: 1;
+
+  opacity: 0.85;
+}
+
+.careers-breadcrumb-current {
+  opacity: 0.72;
+}
+
+/* =========================================
+   CAREERS CONTENT
+========================================= */
+
+.careers-content {
+  padding: 110px 0;
+  background: #f7f4ed;
+}
+
+.careers-content .container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.careers-heading {
+  max-width: 800px;
+}
+
+.careers-heading .eyebrow {
+  margin: 0 0 20px;
+
+  color: #b8862c;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.careers-heading h2 {
+  margin: 0 0 25px;
+
+  color: #10142a;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+.careers-heading > p:last-child {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #5c6379;
+
+  font-size: 20px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   JOBS SECTION
+========================================= */
+
+.careers-jobs {
+  margin-top: 80px;
+
+  padding-top: 50px;
+
+  border-top: 1px solid rgba(16, 20, 42, 0.15);
+}
+
+.careers-jobs h3 {
+  margin: 0 0 12px;
+
+  color: #10142a;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+
+  font-weight: 500;
+}
+
+.careers-jobs p {
+  margin: 0;
+
+  color: #5c6379;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .careers-hero {
+    min-height: 340px;
+  }
+
+  .careers-hero-content {
+    padding: 70px 20px;
+  }
+
+  .careers-hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .careers-content {
+    padding: 80px 0;
+  }
+
+  .careers-content .container {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .careers-heading h2 {
+    font-size: 3rem;
+  }
+
+  .careers-heading > p:last-child {
+    font-size: 17px;
+  }
+}
+
+.job-details {
+  max-width: 1180px;
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.job-details .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  margin-bottom: 2rem;
+  color: #5c6379;
+}
+
+.job-details > h1 {
+  margin: 0.75rem 0 1.5rem;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  overflow-wrap: anywhere;
+}
+
+.job-details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 3rem;
+  color: #5c6379;
+}
+
+.job-details-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.job-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 340px);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.job-details-grid > * {
+  min-width: 0;
+}
+
+.job-details-grid h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.job-long-text {
+  max-width: none;
+  margin-bottom: 2rem;
+  color: #5c6379;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.job-list-section {
+  margin-top: 2rem;
+}
+
+.job-list-section ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.job-list-section li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: #5c6379;
+}
+
+.job-list-section li svg {
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+  color: #c98600;
+}
+
+.job-list-section li span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.apply-card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(16, 20, 42, 0.15);
+  background: #ffffff;
+}
+
+.apply-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.apply-card p {
+  margin-bottom: 1.25rem;
+  color: #5c6379;
+}
+
+.apply-card .btn {
+  justify-content: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.careers-state {
+  padding-block: 6rem;
+}
+
+.careers-error {
+  color: #9b3030;
+}
+
+@media (max-width: 760px) {
+  .job-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   CAREERS PAGE
+========================================= */
+
+.careers-page {
+  width: 100%;
+  background: #f7f4ed;
+  color: #10142a;
+}
+
+/* =========================================
+   CAREERS HERO
+========================================= */
+
+.careers-hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: #10142a;
+}
+
+/* Background slideshow */
+.careers-hero-images {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.careers-hero-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0;
+  transform: scale(1.05);
+
+  transition:
+    opacity 1.2s ease-in-out,
+    transform 7s ease-out;
+}
+
+.careers-hero-image.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark overlay */
+.careers-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: rgba(8, 12, 25, 0.55);
+}
+
+/* Hero text */
+.careers-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  color: #ffffff;
+}
+
+.careers-hero-content h1 {
+  margin: 0 0 22px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.careers-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.careers-breadcrumb-arrow {
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.careers-breadcrumb-current {
+  opacity: 0.7;
+}
+
+/* =========================================
+   CAREERS CONTENT
+========================================= */
+
+.careers-content {
+  padding: 110px 0;
+  background: #f7f4ed;
+}
+
+.careers-content .container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.careers-heading {
+  max-width: 800px;
+}
+
+.careers-heading .eyebrow {
+  margin: 0 0 20px;
+
+  color: #b8862c;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.careers-heading h2 {
+  margin: 0 0 25px;
+
+  color: #10142a;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  line-height: 1;
+  font-weight: 500;
+}
+
+.careers-heading > p:last-child {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #5c6379;
+
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   JOBS
+========================================= */
+
+.careers-jobs {
+  margin-top: 80px;
+  padding-top: 50px;
+
+  border-top: 1px solid rgba(16, 20, 42, 0.15);
+}
+
+.careers-jobs h3 {
+  margin: 0 0 12px;
+
+  color: #10142a;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.careers-jobs p {
+  margin: 0;
+
+  color: #5c6379;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .careers-hero {
+    min-height: 340px;
+  }
+
+  .careers-hero-content {
+    padding: 70px 20px;
+  }
+
+  .careers-hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .careers-content {
+    padding: 80px 0;
+  }
+
+  .careers-content .container {
+    width: calc(100% - 32px);
+  }
+
+  .careers-heading h2 {
+    font-size: 3rem;
+  }
+
+  .careers-heading > p:last-child {
+    font-size: 17px;
+  }
+}
